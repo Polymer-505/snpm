@@ -1,0 +1,30 @@
+{
+  "name": "snpm",
+  "version": "0.1.0",
+  "description": "A simple node package manager written in JavaScript",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Polymer-505/snpm"
+  },
+  "homepage": "https://github.com/Polymer-505/snpm#readme",
+  "bugs": {
+    "url": "https://github.com/Polymer-505/snpm/issues"
+  },
+  "main": "./bin/snpm-cli.js",
+  "scripts": {
+    "build": "pkg ./bin/snpm-cli.js --targets latest-linux-x64 --output ./build/snpm-linux"
+  },
+  "bin": {
+    "snpm": "./bin/snpm-cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [],
+  "author": "Polymer-505",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "@yao-pkg/pkg": "^6.22.0"
+  }
+}

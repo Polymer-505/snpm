@@ -1,0 +1,39 @@
+name: Release snpm
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Downloading code from a repository
+        uses: actions/checkout@v4
+
+      - name: Installing Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "26"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Compiling and Packaging Binaries
+        run: |
+          # Linux x64
+          npm run build && tar -czf snpm-linux-x64.tar.gz -C ./build snpm-linux
+
+      - name: Publishing a release on GitHub
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: true
+          prerelease: true
+          files: |
+            snpm-linux-x64.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
