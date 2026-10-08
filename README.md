@@ -28,7 +28,7 @@ snpm install @polymer505/mss
 
 ## Status
 
-Early version (0.1.0). Only `install` is implemented. `update` and `remove` are planned.
+Early version (0.1.0). Only `install` and `init` is implemented. `update` and `remove` are planned.
 
 ## Building from Source
 
