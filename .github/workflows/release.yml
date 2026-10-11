@@ -25,8 +25,9 @@ jobs:
 
       - name: Compiling and Packaging Binaries
         run: |
-          # Linux x64
+          # Linux x64 and arm64
           npm run build && tar -czf snpm-linux-x64.tar.gz -C ./build snpm-linux
+          npm run build-arm64 && tar -czf snpm-linux-arm64.tar.gz -C ./build snpm-linux-arm64
 
       - name: Publishing a release on GitHub
         uses: softprops/action-gh-release@v2
@@ -35,5 +36,6 @@ jobs:
           prerelease: true
           files: |
             snpm-linux-x64.tar.gz
+            snpm-linux-arm64.tar.gz
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,6 +1,6 @@
 {
   "name": "snpm",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A simple node package manager written in JavaScript",
   "repository": {
     "type": "git",
@@ -12,7 +12,8 @@
   },
   "main": "./bin/snpm-cli.js",
   "scripts": {
-    "build": "pkg ./bin/snpm-cli.js --targets latest-linux-x64 --output ./build/snpm-linux"
+    "build": "pkg ./bin/snpm-cli.js --targets latest-linux-x64 --output ./build/snpm-linux",
+    "build-arm64": "pkg index.js --targets latest-linux-arm64 --output ./build/snpm-linux-arm64"
   },
   "bin": {
     "snpm": "./bin/snpm-cli.js"

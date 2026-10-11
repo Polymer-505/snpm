@@ -28,13 +28,15 @@ snpm install @polymer505/mss
 
 ## Status
 
-Early version (0.2.0). Only `install` and `init` is implemented. `update` and `remove` are planned.
+Early version (0.3.0). Only `install`, `remove` and `init` are implemented. `update` is planned.
+
+> Note: `install` and `remove` don't update `package.json` yet. `remove` deletes only the package itself, its dependencies are left in place for now.
 
 ## Building from Source
 
 If you want to compile `snpm` into a standalone executable file, use `@yao-pkg/pkg`:
 
-> For now, only for linux x86-64
+> For now, only for linux x64 and arm64
 
 1. Clone the repository and install dependencies:
 
@@ -46,8 +48,16 @@ If you want to compile `snpm` into a standalone executable file, use `@yao-pkg/p
 
 2. Build the executable:
 
+- For linux x64:
+
 ```bash
    npm run build
+```
+
+- For linux arm64:
+
+```bash
+   npm run build-arm64
 ```
 
 ## License
