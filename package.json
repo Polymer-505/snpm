@@ -13,7 +13,7 @@
   "main": "./bin/snpm-cli.js",
   "scripts": {
     "build": "pkg ./bin/snpm-cli.js --targets latest-linux-x64 --output ./build/snpm-linux",
-    "build-arm64": "pkg index.js --targets latest-linux-arm64 --output ./build/snpm-linux-arm64"
+    "build-arm64": "pkg ./bin/snpm-cli.js --targets latest-linux-arm64 --output ./build/snpm-linux-arm64"
   },
   "bin": {
     "snpm": "./bin/snpm-cli.js"
