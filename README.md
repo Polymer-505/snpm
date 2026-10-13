@@ -34,7 +34,7 @@ snpm init
 
 Early version (0.4.0). Only `install`, `remove` and `init` are implemented. `update` is planned.
 
-> Note: `install` and `remove` don't update `package.json` yet. `remove` deletes only the package itself, its dependencies are left in place for now.
+> Note: `install` and `remove` deletes only the package itself, its dependencies are left in place for now.
 
 ## Building from Source
 
