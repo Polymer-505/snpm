@@ -1,5 +1,7 @@
 # snpm (Simple Node Package Manager)
 
+<img src="assets/snpmLogo.svg" alt="snpm" width="300">
+
 A simple node package manager written in JavaScript
 
 ## Features
@@ -24,11 +26,13 @@ snpm <command>
 ```bash
 snpm install lodash
 snpm install @polymer505/mss
+snpm remove lodash
+snpm init
 ```
 
 ## Status
 
-Early version (0.3.0). Only `install`, `remove` and `init` are implemented. `update` is planned.
+Early version (0.4.0). Only `install`, `remove` and `init` are implemented. `update` is planned.
 
 > Note: `install` and `remove` don't update `package.json` yet. `remove` deletes only the package itself, its dependencies are left in place for now.
 

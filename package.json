@@ -1,6 +1,6 @@
 {
   "name": "snpm",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A simple node package manager written in JavaScript",
   "repository": {
     "type": "git",
