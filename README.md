@@ -2,12 +2,15 @@
 
 <img src="assets/snpmLogo.svg" alt="snpm" width="300">
 
-A simple node package manager written in JavaScript
+A minimal package manager, written in JavaScript.
 
 ## Features
 
-- Installs packages from npmjs.com
-- Has no dependencies
+- Installs packages and their dependencies from the npm registry
+- Resolves dependency version ranges using semver
+- Records directly installed packages in `package.json`
+- Creates a starter `package.json` with `snpm init`
+- Uses a small runtime dependency set
 
 ## Install
 
@@ -15,11 +18,22 @@ A simple node package manager written in JavaScript
 npm install -g github:Polymer-505/snpm
 ```
 
-## Usage
+Requires Node.js 18 or newer.
+
+## Commands
 
 ```bash
-snpm <command>
+snpm install <package>
+snpm remove <package>
+snpm init
+snpm help
 ```
+
+`install` selects the registry's `latest` version for the requested package, installs its dependencies recursively, and records the requested package in `package.json` using a caret range. If the project does not have a `package.json`, `install` creates one automatically. Scoped package names are supported.
+
+`remove` deletes the package directory from `node_modules`. It doesn't remove that package's dependencies.
+
+`init` creates a starter `package.json` using the current directory name. It exits with a message if `package.json` already exists.
 
 ## Examples
 
@@ -30,15 +44,9 @@ snpm remove lodash
 snpm init
 ```
 
-## Status
-
-Early version (0.4.0). Only `install`, `remove` and `init` are implemented. `update` is planned.
-
-> Note: `install` and `remove` deletes only the package itself, its dependencies are left in place for now.
-
 ## Building from Source
 
-If you want to compile `snpm` into a standalone executable file, use `@yao-pkg/pkg`:
+To compile `snpm` into a standalone executable, use `@yao-pkg/pkg`:
 
 > For now, only for linux x64 and arm64
 

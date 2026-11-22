@@ -5,9 +5,10 @@ import { getArchiveName } from "./getArchiveName.js";
 export async function downloadPackage(packageName, version, link) {
   const response = await fetch(link);
   if (!response.ok) {
-    console.error(response.status);
+    throw new Error(
+      `Failed to download ${packageName}@${version} (${response.status})`,
+    );
   }
-
   await pipeline(
     response.body,
     fs.createWriteStream(getArchiveName(packageName, version)),
